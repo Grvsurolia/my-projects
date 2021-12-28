@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Emails Send</title>
+</head>
+
+<body>
+
+    <p>Hi, Hope You are doing well have ,This mail is to inform you that I will be on leave from {{start_date}} to
+        {{end_date}} due to {{reason}} </p>
+
+    <form action="http://127.0.0.1:8000/leave/leave_reply/" method="POST">
+        <input type="hidden" name="leaveid" value="{{id}}">
+        <input type="hidden" name="user_email" value="{{user_email}}">
+        <input type="hidden" name="hr_email" value="{{hr_email}}">
+
+        <input type="submit" name='action' value="Accept">
+        <input type="submit" name='action' style="margin-left:10px;" value="Reject">
+    </form>
+
+</body>
+
+</html>

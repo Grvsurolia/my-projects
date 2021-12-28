@@ -1,0 +1,72 @@
+{% extends "pegasus/examples_base.html" %}
+{% load static %}
+{% block app %}
+    {% comment %} <section class="section app-card">
+      <div class="columns ">
+        <div class="column is-one-quarter has-text-centered">
+          <img alt="{{ framework_name }}" src="{{ framework_icon }}" style="max-height: 160px;"/>
+        </div>
+        <div class="column">
+          <h1 class="title">{{ framework_name }} Object Lifecycle Demo</h1>
+          <h2 class="subtitle">
+            A single-page interactive data model and UI example.
+          </h2>
+          <div class="content">
+            <p>
+              This is an interactive data model and UI example using
+              <a href="https://www.django-rest-framework.org/" target="_blank">Django Rest Framework</a> and
+              <a href="{{ framework_url }}" target="_blank">{{ framework_name }}</a>.
+              It demonstrates performing simple create, read, update and delete (CRUD) operations on an example
+              "Employee" data model.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> {% endcomment %}
+    <div id="object-lifecycle-home"></div>
+{% endblock %}
+{% block page_js %}
+    <script type="application/javascript">
+        // initialize any page specific stuff here
+        // static files that are used by the page javascript.
+        var STATIC_FILES = {
+            'mailsaas_logo':"{% static 'images/favicons/android-chrome-192x192.png' %}",
+            'mailsaas_logo_150':"{% static 'images/favicons/mstile-150x150.png' %}",
+            'mailsaas_logo_32':"{% static 'images/favicons/favicon-32x32.png' %}",
+            'undraw_empty': "{% static 'images/undraw/undraw_empty.svg' %}",
+            'argon_react_white': "{% static 'images/favicons/android-chrome-192x192.png' %}",
+            'argon_blue':"{%static 'images/img/brand/blue.png'%}",
+            'team_1':"{%static 'images/img/theme/team-1.jpg' %}",
+            'team_2':"{%static 'images/img/theme/team-2.jpg' %}",
+            'team_3':"{%static 'images/img/theme/team-3.jpg' %}",
+            'team_4':"{%static 'images/img/theme/team-4.jpg' %}",
+            'team_5':"{%static 'images/img/theme/team-5.jpg' %}",
+            'argon_react':"{%static 'images/img/brand/argon-react.png' %}",
+            'vue':"{%static 'images/img/theme/vue.jpg' %}",
+            'react':"{%static 'images/img/theme/react.jpg' %}",
+            'sketch':"{%static 'images/img/theme/sketch.jpg' %}",
+            'angular':"{%static 'images/img/theme/angular.jpg' %}",
+            'bootstrap':"{ %static 'images/img/theme/bootstrap.jpg' %}",
+            'google':"{ %static 'images/img/icons/common/google.svg' %}",
+            'github':"{ %static 'images/img/icons/common/github.svg'  %}",
+            'img1':"{ %static 'images/img/theme/img-1-1000x600.jpg'  %}",
+            'bitcoin':"{ %static 'images/img/icons/cards/bitcoin.png' %}",
+            'gb':"{ %static 'images/img/icons/flags/GB.png' %}",
+            'de':"{ %static 'images/img/icons/flags/DE.png' %}",
+            'us':"{ %static 'images/img/icons/flags/US.png' %}",
+            'img2':"{ %static 'images/img/theme/img-1-1000x900.jpg' %}",
+            'visa':"{ %static 'images/img/icons/cards/visa.png' %}",
+            'paypal':"{ %static 'images/img/icons/cards/paypal.png' %}",
+            'mastercard':"{ %static 'images/img/icons/cards/mastercard.png' %}",
+            'profilecover':"{ %static 'images/img/theme/profile-cover.jpg' %}",
+            'sales_force':"{%static '/images/img/theme/salesforseblue.png'%}",
+            'slack':"{%static '/images/img/theme/slack.png'%}",
+            'pipe_drive':"{%static '/images/img/theme/pipedrive.jpeg'%}",
+            'hub_spot':"{%static '/images/img/theme/hubspot.png'%}"
+        };
+    </script>
+    <script src="{% static 'rest_framework/js/coreapi-0.1.1.js' %}"></script>
+    <script src="{% url 'api_schemajs' %}"></script>
+    {% block framework_bundle %}
+    {% endblock %}
+{% endblock %}

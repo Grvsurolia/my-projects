@@ -1,0 +1,1324 @@
+{
+	"info": {
+		"_postman_id": "b434081e-50c4-4dd7-b2d1-1a03daf02fe0",
+		"name": "crowdfunding",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register Campaign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "full_name",
+							"value": "dibiya2",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "dibiya2@externlabs.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Gaurav@1234",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "9125970322",
+							"type": "text"
+						},
+						{
+							"key": "user_profile",
+							"type": "file",
+							"src": "/C:/Users/gaura/Pictures/Screenshots/Screenshot (3).png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/user/register/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "gauravsurolia@externlabs.com",
+							"type": "text"
+						},
+						{
+							"key": "otp",
+							"value": "772985",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/user/verifyemail/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"verifyemail",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Campaign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "gauravsurolia@externlabs.com",
+							"type": "text"
+						},
+						{
+							"key": "passwordorotp",
+							"value": "Gaurav@1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/user/login/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Donor Transactions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "amount",
+							"value": "5000",
+							"type": "text"
+						},
+						{
+							"key": "full_name",
+							"value": "aaa donor",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "aaa@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "8888888888",
+							"type": "text"
+						},
+						{
+							"key": "fr",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "billingCity",
+							"value": "jaipur",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/donor/transaction/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"donor",
+						"transaction",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Beneficiary",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNiwidXNlcm5hbWUiOiJnYXVyYXZzdXJvbGlhQGV4dGVybmxhYnMuY29tIiwiZXhwIjoxNjEwMTA3MjMxLCJlbWFpbCI6ImdhdXJhdnN1cm9saWFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYwOTkzNDQzMX0.jm4RdlMk6iKqys4OS328MYOsFsMF0PN0aKRCwg6kDyg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "cause",
+							"value": "medical",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Title 3",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryFullName",
+							"value": "a4 full name",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryAge",
+							"value": "22",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryGender",
+							"value": "M",
+							"type": "text"
+						},
+						{
+							"key": "cityOfResidence",
+							"value": "Jaipur",
+							"type": "text"
+						},
+						{
+							"key": "goalAmount",
+							"value": "100000",
+							"type": "text"
+						},
+						{
+							"key": "lastDateToFund",
+							"value": "2022-01-11",
+							"type": "text"
+						},
+						{
+							"key": "story",
+							"value": "a4 story",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryPhoto",
+							"type": "file",
+							"src": "/C:/Users/gaura/Downloads/Screenshot from 2020-12-21 12-24-59.png"
+						},
+						{
+							"key": "beneficiaryDocument",
+							"type": "file",
+							"src": "/C:/Users/gaura/Downloads/stt22.py"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/user/createfundraiser/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"createfundraiser",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Comments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MDk5MjQwMDIsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5NzUxMjAyfQ.2NtQpCrDtVVLNrkghLoAGVEGsP9Sgcp66qWxniHeTqo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "comment",
+							"value": "Comment for fr 2",
+							"type": "text"
+						},
+						{
+							"key": "fundraiser",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/user/comments/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"comments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Perticular Beneficiary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/viewfundraiser/Title-1/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"viewfundraiser",
+						"Title-1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Browse Fundraisers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/browsefundraisers/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"browsefundraisers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Browse Fundraisers filter by cause",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/user/browsefundraisers/?cause=medical",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"browsefundraisers",
+						""
+					],
+					"query": [
+						{
+							"key": "cause",
+							"value": "medical"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Browse Fundraiser Search by cause, Title, slug",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/user/browsefundraisers/?search=second",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"browsefundraisers",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "second"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My Beneficiary",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MDk5MjQwMDIsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5NzUxMjAyfQ.2NtQpCrDtVVLNrkghLoAGVEGsP9Sgcp66qWxniHeTqo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/mybeneficiaries/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"mybeneficiaries",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update beneficiary by Campaigner",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNiwidXNlcm5hbWUiOiJnYXVyYXZzdXJvbGlhQGV4dGVybmxhYnMuY29tIiwiZXhwIjoxNjEwMDg4ODg2LCJlbWFpbCI6ImdhdXJhdnN1cm9saWFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYwOTkxNjA4Nn0.Qbl3S_b0XgrymqNGR-9tz-x7LgsKka4oizHKAmbaRho",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "frid",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "ygf ssi sbhfdbfb bvgif ghaf gfb hjadfbvjdf vjfduy ebavhgfb gsdf sdbgfg ebubdfhgbdfkdh rbd gfhdbg   ri gbg bkdgdilv abhshbr  girbgrbg irg k fk bibgre uiggb dsfk vdfjhg eary ger",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/user/update_beneficiary/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"update_beneficiary",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin View all Beneficiaries",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNiwidXNlcm5hbWUiOiJnYXVyYXZzdXJvbGlhQGV4dGVybmxhYnMuY29tIiwiZXhwIjoxNjEwMTg5OTQ1LCJlbWFpbCI6ImdhdXJhdnN1cm9saWFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYxMDAxNzE0NX0.WeXt2o-69f0jts7u8Sodsg6ez__k0zbeVYZOKOP-uiE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/adminapp/browseallfundraisers/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"browseallfundraisers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Delete a Beneficiaries",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MDk5MjQwMDIsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5NzUxMjAyfQ.2NtQpCrDtVVLNrkghLoAGVEGsP9Sgcp66qWxniHeTqo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/adminapp/delete_a_fundraiser/17/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"delete_a_fundraiser",
+						"17",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Multi delete Beneficiaries",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MDk5MjQwMDIsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5NzUxMjAyfQ.2NtQpCrDtVVLNrkghLoAGVEGsP9Sgcp66qWxniHeTqo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fr_ids\": [18,19]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/adminapp/delete_multi_fundraiser/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"delete_multi_fundraiser",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Update a Beneficiary",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MDk5MjQwMDIsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5NzUxMjAyfQ.2NtQpCrDtVVLNrkghLoAGVEGsP9Sgcp66qWxniHeTqo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Title 23",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "Title-23",
+							"type": "text"
+						},
+						{
+							"key": "cause",
+							"value": "medical",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryFullName",
+							"value": "a4 full name update",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryAge",
+							"value": "22",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryGender",
+							"value": "M",
+							"type": "text"
+						},
+						{
+							"key": "cityOfResidence",
+							"value": "Jaipur",
+							"type": "text"
+						},
+						{
+							"key": "goalAmount",
+							"value": "50000",
+							"type": "text"
+						},
+						{
+							"key": "is_active",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "story",
+							"value": "a4 story update",
+							"type": "text"
+						},
+						{
+							"key": "isPrivate",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryPhoto",
+							"type": "file",
+							"src": "/C:/Users/gaura/Downloads/Screenshot from 2020-12-21 12-26-08.png"
+						},
+						{
+							"key": "lastDateToFund",
+							"value": "20-01-2021",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryDocument",
+							"type": "file",
+							"src": "/C:/Users/gaura/Downloads/Screenshot from 2020-12-21 12-26-02.png"
+						},
+						{
+							"key": "created_date_time",
+							"value": "2021-01-04T11:42:07.607221Z",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "6",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/adminapp/update_a_fundraiser/20/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"update_a_fundraiser",
+						"20",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Create Campaigner",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MTAwMDYxMTgsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5ODMzMzE4fQ.D1LmBr0qgDf8V7esQfB7rvLeVoyyveg6B1Qlfq-hMsM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "full_name",
+							"value": "newwwwww",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "grv4@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Gaurav@1234",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "9125970322",
+							"type": "text"
+						},
+						{
+							"key": "user_profile",
+							"type": "file",
+							"src": "/C:/Users/gaura/Downloads/Screenshot from 2020-12-21 12-26-02.png"
+						},
+						{
+							"key": "is_active",
+							"value": "True",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/adminapp/create_campaigner/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"create_campaigner",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin View All Campaigners",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNiwidXNlcm5hbWUiOiJnYXVyYXZzdXJvbGlhQGV4dGVybmxhYnMuY29tIiwiZXhwIjoxNjEwMTczMzY4LCJlbWFpbCI6ImdhdXJhdnN1cm9saWFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYxMDAwMDU2OH0.F63dR2Kn5ei1LNxoeaAXOYdq-amccDVaNeruwM5b4gk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Title 23",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "Title-23",
+							"type": "text"
+						},
+						{
+							"key": "cause",
+							"value": "medical",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryFullName",
+							"value": "a4 full name update",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryAge",
+							"value": "22",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryGender",
+							"value": "M",
+							"type": "text"
+						},
+						{
+							"key": "cityOfResidence",
+							"value": "Jaipur",
+							"type": "text"
+						},
+						{
+							"key": "goalAmount",
+							"value": "50000",
+							"type": "text"
+						},
+						{
+							"key": "is_active",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "story",
+							"value": "a4 story update",
+							"type": "text"
+						},
+						{
+							"key": "isPrivate",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryPhoto",
+							"type": "file",
+							"src": "/C:/Users/gaura/Downloads/Screenshot from 2020-12-21 12-26-08.png"
+						},
+						{
+							"key": "lastDateToFund",
+							"value": "20-01-2021",
+							"type": "text"
+						},
+						{
+							"key": "beneficiaryDocument",
+							"type": "file",
+							"src": "/C:/Users/gaura/Downloads/Screenshot from 2020-12-21 12-26-02.png"
+						},
+						{
+							"key": "created_date_time",
+							"value": "2021-01-04T11:42:07.607221Z",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "asdfgh",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "slug",
+							"value": "asdfgh",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "cause",
+							"value": "medical",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "beneficiaryFullName",
+							"value": "aserfg",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "beneficiaryAge",
+							"value": "awsedrgh",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "beneficiaryGender",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "cityOfResidence",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "goalAmount",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "story",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "beneficiaryPhoto",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "lastDateToFund",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "beneficiaryDocument",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "user",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/adminapp/browseallcampaigners/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"browseallcampaigners",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Delete a Campaigner",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MDk5MjQwMDIsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5NzUxMjAyfQ.2NtQpCrDtVVLNrkghLoAGVEGsP9Sgcp66qWxniHeTqo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/adminapp/delete_a_campainer/5/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"delete_a_campainer",
+						"5",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Delete Multi Campaigners",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MTAwMDYxMTgsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5ODMzMzE4fQ.D1LmBr0qgDf8V7esQfB7rvLeVoyyveg6B1Qlfq-hMsM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"campaignerids\":[8,9]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/adminapp/delete_multi_campainers/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"delete_multi_campainers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Update a Campaigner",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MTAwMDYxMTgsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5ODMzMzE4fQ.D1LmBr0qgDf8V7esQfB7rvLeVoyyveg6B1Qlfq-hMsM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "grv4",
+							"type": "text"
+						},
+						{
+							"key": "full_name",
+							"value": "newwwwww",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "grv4@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "user_profile",
+							"type": "file",
+							"src": "/C:/Users/gaura/Downloads/Screenshot from 2020-12-21 12-25-08.png"
+						},
+						{
+							"key": "phone_number",
+							"value": "9125970322",
+							"type": "text"
+						},
+						{
+							"key": "lastEmailOtp",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "auth_provider",
+							"value": "email",
+							"type": "text"
+						},
+						{
+							"key": "groups",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "is_superuser",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "is_staff",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "is_active",
+							"value": "false",
+							"type": "text"
+						},
+						{
+							"key": "date_joined",
+							"value": "2021-01-05T10:10:27.184572Z",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/adminapp/update_a_campainers/10/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"update_a_campainers",
+						"10",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Get All Transactions details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MTAwMDYxMTgsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5ODMzMzE4fQ.D1LmBr0qgDf8V7esQfB7rvLeVoyyveg6B1Qlfq-hMsM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/adminapp/get_all_trans/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"get_all_trans",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Delete A Transaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MTAwMDYxMTgsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5ODMzMzE4fQ.D1LmBr0qgDf8V7esQfB7rvLeVoyyveg6B1Qlfq-hMsM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/adminapp/delete_a_trans/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"delete_a_trans",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Delete Multi Trans",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MTAwMDYxMTgsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5ODMzMzE4fQ.D1LmBr0qgDf8V7esQfB7rvLeVoyyveg6B1Qlfq-hMsM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transids\":[2,3]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/adminapp/delete_multi_trans/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"delete_multi_trans",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Update A Transaction",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImdydkBnbWFpbC5jb20iLCJleHAiOjE2MTAwMDYxMTgsImVtYWlsIjoiZ3J2QGdtYWlsLmNvbSIsIm9yaWdfaWF0IjoxNjA5ODMzMzE4fQ.D1LmBr0qgDf8V7esQfB7rvLeVoyyveg6B1Qlfq-hMsM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"amount\": 5000,\r\n    \"full_name\": \"aaa donor 11\",\r\n    \"email\": \"aaa@gmail.com\",\r\n    \"phone_number\": \"8888888888\",\r\n    \"contributeAnonimusly\": false,\r\n    \"billingCity\": \"jaipur\",\r\n    \"country_code\": \"IN\",\r\n    \"country_name\": \"India\",\r\n    \"city\": \"Delhi\",\r\n    \"postal\": \"110054\",\r\n    \"latitude\": \"28.6667\",\r\n    \"longitude\": \"77.2167\",\r\n    \"IPv4\": \"103.46.200.214\",\r\n    \"state\": \"National Capital Territory of Delhi\",\r\n    \"is_active\": false,\r\n    \"fr\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/adminapp/update_a_trans/4/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"update_a_trans",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Update Beneficiafy request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/adminapp/get_update_request/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"adminapp",
+						"get_update_request",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

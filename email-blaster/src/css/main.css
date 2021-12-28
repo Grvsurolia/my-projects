@@ -1,0 +1,48 @@
+.add{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+h3{
+    text-align: center;
+    margin-top: 30px;
+}
+.table{
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+}
+.main-email-div{
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+}
+.nav-item{
+    width: 50%;
+    text-align: center;
+  }
+.tells-about-text{
+    text-align: center;
+    letter-spacing: 0px;
+    color: #1F1F1F;
+    font-size: 2vw;
+  }
+  .nav-link,.nav-link:hover{
+    border: none !important;
+    color: #7B7B7B;
+  }
+  .nav-link.active{
+    border: none !important;
+    color: #EA1E63 !important;
+    border-bottom:2px solid #EA1E63 !important;
+  }
+  .tabs-div{
+    width: 70%;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .float-right{
+    margin-left: 370px;
+    cursor: pointer;
+  }

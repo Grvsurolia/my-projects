@@ -1,0 +1,53 @@
+version: "3"
+
+services: 
+  db:
+    image: postgres
+    environment: 
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  back-end:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - "8000:8000"
+    environment: 
+      - CELERY_BROKER=redis://redis:6379/
+      - CELERY_BACKEND=redis://redis:6379/
+    volumes: 
+      - .:/code
+    command: > 
+      sh -c "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - db
+  redis:
+    image: redis:alpine
+  celery:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: celery -A employee_managements worker -l info
+    volumes:
+      - .:/code
+    environment:
+      - CELERY_BROKER=redis://redis:6379/
+      - CELERY_BACKEND=redis://redis:6379/
+    links: 
+      - redis
+      - db
+    depends_on:
+      - redis
+      - db
+  celery-beat:
+    build: .
+    command: celery -A employee_managements beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+      - redis
+volumes:
+  postgres_data:
+  redis_data:

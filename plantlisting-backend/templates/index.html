@@ -1,0 +1,43 @@
+{% extends "base2.html" %}
+{% load static %}
+
+    
+{% block style %}
+    <title>Chat Room</title>
+    <link href="{% static 'css/room.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    {{ user_name|json_script:"user-name" }}
+
+    <div class="container">
+               
+                <!-- <h1 style="text-align: center;border: 1px solid black;padding: 0%;">Select The User</h1>  -->
+                <div class="userListBody" style="text-align: center;">
+                    <h1 style="text-align: center;">Select The User</h1> 
+                    {% for user in my_users %}
+                        {% if request.user.username != user.username %}
+                            <div class="userForChat" style="background-color: white; border: 1px solid;">
+                                
+                                <div class="userItem" style="font-size: 29px;">
+                                    <a href="{% url 'room' user_name=user.username %}">{{user}}</a>
+                                </div>
+                                <!-- <div class="previewItem">hi how are you...</div>  {{ value|truncatewords:2 }} -->
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+            
+       
+    
+    <input type="hidden" value="{{request.user}}" id="uname">
+    <input type="file" id="inputFileToLoad" style="display: none;">
+   
+    
+
+
+
+
+{% endblock %}

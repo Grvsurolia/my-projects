@@ -1,0 +1,4615 @@
+{
+	"info": {
+		"_postman_id": "ab2a0d3d-06f7-4c5d-85c8-9bd91f7176cf",
+		"name": "Angaza Ecomm new api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"shuvikagupta@externlabs.com\",\r\n    \"password\":\"Shuvika@1234\",\r\n    \"first_name\":\"Shuvika\",\r\n    \"last_name\":\"Gupta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/register/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"divyakhandelwal@externlabs.com\",\n    \"otp\":\"720538\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/verify_email/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"verify_email",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"divyakhandelwal@externlabs.com\",\n    \"passwordorotp\":\"894073\"\n   \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"divyakhandelwal@externlabs.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/reset_password/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"reset_password",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":1,\r\n    \"new_password\":\"password1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyMzkxNDQwNywiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyMzc0MTYwN30.x8tAUUXHEdPqu6uAU0mmHC-Z9xBgKfyr3feeDhxL3eo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"old_password\":\"password1\",\n    \"new_password\":\"Divya@1234\",\n    \"new_confirm_password\":\"Divya@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/update_password/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"update_password",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTYzNjg3MiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTQ2NDA3Mn0.TLoUM4qArGm1uf-nn7OJtUEMIWYFePHfEEzotwULFBo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "ashutosh",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "sharma",
+									"type": "text"
+								},
+								{
+									"key": "profile_image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "phone_number",
+									"value": "7418529631",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/profile_update/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"profile_update",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_products/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view products image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_products_image/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_products_image",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add cart item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzg3NTU4MSwiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzI3MDc4MX0.Agv3bHLuVZIp-jbgu3QlpUJCaVvLY472Gl1Ps4k_7tE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\":7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/deals/add_cart/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"add_cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all cart item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjUzMDcxNDEsImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjUxMzQzNDF9.u4uYOtAiCVJByodh7BSlnkIco2pwSjNnm6AobD9C9rI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_cart_item/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_cart_item",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove cart item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyMzM5MjU0NSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyMzIxOTc0NX0.zt0XeRmViSs0GhsGrhRz-CgFzQXMjkjDa_Xro37PKOo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/remove_cart_item/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"remove_cart_item",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view product size",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_product_size/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_product_size",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add reviews",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deal\":1,\r\n    \"email\":\"divya1998kh@gmail.com\",\r\n    \"name\":\"divya\",\r\n    \"feedback\":\"This product is very good product\",\r\n    \"star_point\":4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/deals/add_review/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"add_review",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view product reviews",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNywidXNlcm5hbWUiOiJhc2h1dG9zaHNoYXJtYUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNTEzMjEyOSwiZW1haWwiOiJhc2h1dG9zaHNoYXJtYUBleHRlcm5sYWJzLmNvbSIsIm9yaWdfaWF0IjoxNjI0OTU5MzI5fQ.zSHN4KfIXmOVwYfZfS30f-qMOyAU2o_JUqdiZfWLMqw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_review_item/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_review_item",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add wish list item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNjI2MzQ2NywiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNjA5MDY2N30.pY5l-p-Vs2gWwTZpGD3sDnm0sx4MBU4eOdF6SL-pJlM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\":9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/deals/add_wishlist/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"add_wishlist",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view wish list item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyMzU3MTI5NSwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyMzM5ODQ5NX0.cZC2lDvongID1ulWC8536v8EJzjyRV8wMQaus1QLh0I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_wishlist_item/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_wishlist_item",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update reviews",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyMzU4Mjc3OCwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyMzQwOTk3OH0.4I8AEPp8Ww2jJpHOeqjGp1pNujqYJah7wQpZUVxjgA8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"feedback\": \"This product is very good quality product\",\r\n    \"star_point\": 4,\r\n    \"deal\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/deals/update_review/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"update_review",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view one user profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyMzkwOTU3MSwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyMzczNjc3MX0.mzqyfzJypLRVkAiG_O0-Nuy7sbLXhX4_4SQoVtyBHwk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/profile_update/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"profile_update",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove wish list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNjI2MTIzMywiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNjA4ODQzM30.SYzFVq2RewsiTMvpvvGD-NYm4BRcGlIHURoWay0xOBc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/remove_wishlist_item/2/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"remove_wishlist_item",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get feature deal product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_feature_Deal/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_feature_Deal",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view popular Deal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_popular_Deal/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_popular_Deal",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view recent Deal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://54.70.54.216:8000/deals/view_recent_Deal/",
+							"protocol": "http",
+							"host": [
+								"54",
+								"70",
+								"54",
+								"216"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_recent_Deal",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view product details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_product_details/3/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_product_details",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/category_list/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"category_list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view category wise product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/category_wise_list/8/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"category_wise_list",
+								"8",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/deals/search_product?search=watch",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"search_product"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "watch"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view product descripation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNDE1ODY1MCwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyMzk4NTg1MH0.zXiHWdemCb8qrRVJAzjw9Vd7wLNFDr4VRLXPD5NhFPQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://angaza-new-backend.herokuapp.com/deals/view_description/2/",
+							"protocol": "https",
+							"host": [
+								"angaza-new-backend",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"deals",
+								"view_description",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view product question",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/deals/view_question/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_question",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view product color",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/product_colors_view/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"product_colors_view",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view subcategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_subcategory/2/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_subcategory",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subscribe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"prakhargupta@externlabs.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://angaza-new-backend.herokuapp.com/user/subscribe/",
+							"protocol": "https",
+							"host": [
+								"angaza-new-backend",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"subscribe",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjU2MjM1MzEsImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjU0NTA3MzF9.AZMqdym6TAx9lXG5FcyRlz8jX6TnRTfPTIbasOxKwns",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"house_no\":\"100-A\",\r\n    \"colony\":\"Arjun nagar north mahesh nagar\",\r\n    \"landmark\":\"tonk phatak\",\r\n    \"city\":\"jaipur\",\r\n    \"state\":\"rajasthan\",\r\n    \"country\":\"india\",\r\n    \"address_type\":\"home time 7am-9am\",\r\n    \"email\":\"divya1998kh@gmail.com\",\r\n    \"contact_number\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/add_address/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"add_address",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view customer address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNywidXNlcm5hbWUiOiJhc2h1dG9zaHNoYXJtYUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNTEzMjEyOSwiZW1haWwiOiJhc2h1dG9zaHNoYXJtYUBleHRlcm5sYWJzLmNvbSIsIm9yaWdfaWF0IjoxNjI0OTU5MzI5fQ.zSHN4KfIXmOVwYfZfS30f-qMOyAU2o_JUqdiZfWLMqw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/address_view/17/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"address_view",
+								"17",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNywidXNlcm5hbWUiOiJhc2h1dG9zaHNoYXJtYUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNTE5NzA0NCwiZW1haWwiOiJhc2h1dG9zaHNoYXJtYUBleHRlcm5sYWJzLmNvbSIsIm9yaWdfaWF0IjoxNjI1MDI0MjQ0fQ._r4O9_P2-3OqQqfn_2ymokl0Jp9qfFhxWi31Ym_N1bA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"house_no\": \"23\",\r\n    \"colony\": \"Anita colony block-A\",\r\n    \"landmark\": \"near by sanganer railway station, saroj vihar\",\r\n    \"city\": \"jaipur\",\r\n    \"state\": \"rajasthan\",\r\n    \"country\": \"india\",\r\n    \"address_type\": \"home time 7am-10am\",\r\n    \"email\":\"divya1998kh@gmail.com\",\r\n    \"contact_number\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/user/address_update/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"address_update",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all home page advertisement view",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTIwNjE3MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTAzMzM3MX0.s_0EBp2mX3iZtKaLtnphN7btMQhfSnOdpQzE6pNfsjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin_user/all_home_adv/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"all_home_adv",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all Detail page advertisement view",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin_user/numberwise_detail_adv/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"numberwise_detail_adv",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view own all order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzk5MjY3MywiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzM4Nzg3M30.ZGaBnptpMNWRcRw78e83VINfqmbQX7rwOKnKgap2Ew8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/view_own_order/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"view_own_order",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyOTI2MjczMywiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyODY1NzkzM30.8aEKqGaA6tLj2M_Urwvtc96w08xu1bjkzHgbM9h9xJg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/cancel_order/19/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"cancel_order",
+								"19",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view own all cancel order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjUyMTkyNjksImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjUwNDY0Njl9.-KmkTDeSxg56Pz5LOzrFUIR0zT-kmMKJEFgmJqzaYFY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/Viewall_cancel_order/18/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"Viewall_cancel_order",
+								"18",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel order details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjUyMTkyNjksImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjUwNDY0Njl9.-KmkTDeSxg56Pz5LOzrFUIR0zT-kmMKJEFgmJqzaYFY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/cancel_order_detail/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"cancel_order_detail",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View product cancel order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjUyMTkyNjksImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjUwNDY0Njl9.-KmkTDeSxg56Pz5LOzrFUIR0zT-kmMKJEFgmJqzaYFY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/View_product_cancelorder/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"View_product_cancelorder",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "total product sale",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/product_sale/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"product_sale",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cart total amount view",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjY1OTE5MzIsImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjY0MTkxMzJ9.fVds5lqGpvMYechEVj25nUJelR4Ojn9P7y4ignoGXk8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/cart_total_amount/18/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"cart_total_amount",
+								"18",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "related product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/related_product/13/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"related_product",
+								"13",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Quantity increase",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzY0MDYzMCwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzAzNTgzMH0.UENtbVJcNGymbaajb8qrUj3S7Wy9BSy9o4_f6_UrXmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/deals/cart_quantity/3/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"cart_quantity",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "Create Deals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyMzM5MjU0NSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyMzIxOTc0NX0.zt0XeRmViSs0GhsGrhRz-CgFzQXMjkjDa_Xro37PKOo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Top Deals\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/deals/create_deals/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"create_deals",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin_user register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"deepikamaheshwari@externlabs.com\",\r\n    \"password\":\"Divya@1234\",\r\n    \"first_name\":\"Deepika\",\r\n    \"last_name\":\"Maheshwari\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin_user/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Deals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyMzM5MjU0NSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyMzIxOTc0NX0.zt0XeRmViSs0GhsGrhRz-CgFzQXMjkjDa_Xro37PKOo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/create_deals/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"create_deals",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNjg3OTk5MiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNjcwNzE5Mn0.jr4dh7YNEJXhRg4K2HOtLbsX7nOPvOghLDbh47rylNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\":2,\r\n    \"question\":\"Is it genuine? What does package contain?\",\r\n    \"answer\":\"Yes its 100% genuine Ray-Ban. it comes with leather case, cleaning cloth and warranty card.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/deals/add_question/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"add_question",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update question",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTIwNjE3MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTAzMzM3MX0.s_0EBp2mX3iZtKaLtnphN7btMQhfSnOdpQzE6pNfsjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 22,\r\n        \"product\": \"Apple iPhone Retina 6s Plus 32GB\",\r\n        \"user\": \"divya 1 khandelwal 1\",\r\n        \"question\": \"i phone 6 rose gold is in out of stock? is tr any way to pre order now to avail the cash back and once it is in stock can u deliver??\",\r\n        \"answer\": \"Buying an Iphone is total stupidity where u have to pay such a big price for it. Its better to pay half the price for android and you will get double the configuration and you will be more satisfied using it. In every aspect android is better. I dont know what other people think but this is what I think.\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/deals/update_question/22/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"update_question",
+								"22",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add home page advertisement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTIwNjE3MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTAzMzM3MX0.s_0EBp2mX3iZtKaLtnphN7btMQhfSnOdpQzE6pNfsjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image_number",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/SAMSUNG LED TV 02 by omarhamdy on DeviantArt.jpg"
+								},
+								{
+									"key": "url",
+									"value": "https://angaza-new-frontend.herokuapp.com/product/11",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin_user/add_homepage_adv/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"add_homepage_adv",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add detail page advertisement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTIwNjE3MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTAzMzM3MX0.s_0EBp2mX3iZtKaLtnphN7btMQhfSnOdpQzE6pNfsjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image_number",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/adv1.jpg"
+								},
+								{
+									"key": "url",
+									"value": "https://angaza-new-frontend.herokuapp.com/product/6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin_user/add_detailpage_adv/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"add_detailpage_adv",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product connect with deals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTI4MjQ0MywiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTEwOTY0M30.zYFJM5exAntS4tYUIDV7PL54ZYQJ53EGU1MJa8_23nI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\":12,\r\n    \"product_deals\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin_user/connect_productwith_deal/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"connect_productwith_deal",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add subcategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNDQzOTk4MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNDI2NzE4MX0.SnKxvJ7WIsrE6AQfwZbGfY3tUg_r_M55TRwWwuqp2dw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\":11,\r\n    \"sub_name\":\"womens\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/admin_user/add_subcategory/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"add_subcategory",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update subcategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNDQzOTk4MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNDI2NzE4MX0.SnKxvJ7WIsrE6AQfwZbGfY3tUg_r_M55TRwWwuqp2dw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": 11,\r\n    \"sub_name\": \"women\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/admin_user/update_subcategory/2/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"update_subcategory",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update size",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTAzMTc0NSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNDg1ODk0NX0.76cadoZRkApFbTXddfOtgmmuv09QSau7PZBn7ho1gCs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"size_or_weight\": \"28A\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin_user/update_size/5/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"update_size",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view one product all orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjUyMTkyNjksImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjUwNDY0Njl9.-KmkTDeSxg56Pz5LOzrFUIR0zT-kmMKJEFgmJqzaYFY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/View_product_order/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"View_product_order",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update home pages adv",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTIwNjE3MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTAzMzM3MX0.s_0EBp2mX3iZtKaLtnphN7btMQhfSnOdpQzE6pNfsjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image_number",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/SAMSUNG LED TV 02 by omarhamdy on DeviantArt.jpg"
+								},
+								{
+									"key": "url",
+									"value": "https://angaza-new-frontend.herokuapp.com/product/11",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin_user/update_home_adv/9/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"update_home_adv",
+								"9",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update detail page adv",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTIwNjE3MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTAzMzM3MX0.s_0EBp2mX3iZtKaLtnphN7btMQhfSnOdpQzE6pNfsjE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image_number",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/SAMSUNG LED TV 02 by omarhamdy on DeviantArt.jpg"
+								},
+								{
+									"key": "url",
+									"value": "https://angaza-new-frontend.herokuapp.com/product/11",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin_user/update_details_adv/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"update_details_adv",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view speifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/store/get_spefications/1/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"get_spefications",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "store",
+			"item": [
+				{
+					"name": "store owner register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"divyakhandelwal@externlabs.com\",\r\n    \"password\":\"Divya@1234\",\r\n    \"first_name\":\"Divya\",\r\n    \"last_name\":\"khandelwal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/store/store_register/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"store_register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNjkzNjA3NywiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNjc2MzI3N30.4zmolxGcByvCfAxPMNyD5enR__xumFpLP-5-LasoNFM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Loafers\",\r\n    \"location\":\"jaipur\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/store/add_store/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"add_store",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjUzMDcxNDEsImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjUxMzQzNDF9.u4uYOtAiCVJByodh7BSlnkIco2pwSjNnm6AobD9C9rI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ARMANI's Store\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/store/update_store/8/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"update_store",
+								"8",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product size add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjUzMDcxNDEsImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjUxMzQzNDF9.u4uYOtAiCVJByodh7BSlnkIco2pwSjNnm6AobD9C9rI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\":12,\r\n    \"product_size\":9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/store/add_product_size/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"add_product_size",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product size",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjUzMDcxNDEsImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjUxMzQzNDF9.u4uYOtAiCVJByodh7BSlnkIco2pwSjNnm6AobD9C9rI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": 11,\r\n    \"product_size\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/store/update_product_size/14/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"update_product_size",
+								"14",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product color",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjUzMDcxNDEsImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjUxMzQzNDF9.u4uYOtAiCVJByodh7BSlnkIco2pwSjNnm6AobD9C9rI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\":11,\r\n    \"product_color\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/add_product_color/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"add_product_color",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product color",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjUzMDcxNDEsImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjUxMzQzNDF9.u4uYOtAiCVJByodh7BSlnkIco2pwSjNnm6AobD9C9rI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": 11,\r\n    \"product_color\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/update_product_color/12/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"update_product_color",
+								"12",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add specifications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTYzNjg3MiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTQ2NDA3Mn0.TLoUM4qArGm1uf-nn7OJtUEMIWYFePHfEEzotwULFBo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "the_json",
+									"value": "{\"Brand\":\"Noise\",\"Manufacturer\":\"‎Transcend sourcing limited, Fulongfuhe Road, Dongguan city - 523025\",\"Model\":\"‎Wrb-sw-colorfitpro2oxy-std-blk\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/store/add_specifications/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"add_specifications",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update specification",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTYzNjg3MiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTQ2NDA3Mn0.TLoUM4qArGm1uf-nn7OJtUEMIWYFePHfEEzotwULFBo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "the_json",
+									"value": "{\"Brand\":\"Noise\",\"Manufacturer\":\"‎Transcend sourcing limited, Fulongfuhe Road, Dongguan city - 523025\",\"Model\":\"‎Wrb-sw-colorfitpro2oxy-std-blk\",\"Batteries\":\"‎1 Lithium Polymer batteries required\",\"Packer\":\"Nexxbase Marketing Pvt. Ltd, Khasra No-146/25/2/1, Jail Road Badshahpur, Gurugram Haryana-122101, 8882-132-132\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/store/update_product_specification/3/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"update_product_specification",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "new api",
+			"item": [
+				{
+					"name": "add product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNjkyODA4MCwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNjc1NTI4MH0.ZTisG4A6ro-DgciUvNRRtLMiRIa8bILyiGZHlre-iF8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Giorgio Armani Si Eau de Parfum Spray for Women",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "17500",
+									"type": "text"
+								},
+								{
+									"key": "store",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Brand\tGiorgio Armani\nIngredients\tIngredients -alcohol, parfum / fragrance, aqua / water, benzyl salicylate, benzyl alcohol, ethylhexyl methoxycinnamate, linalool, limonene, butyl methoxydibenzoylmethane, ethylhexyl salicylate, hydroxycitronellal, hexyl cinnamal, geraniol, cinnamyl alcohol, bht, alpha-isomethyl ionone, citronellol, eugenol, citral, benzyl benzoate, farnesol, coumarin .Ingredients -alcohol, parfum / fragrance, aqua / water, benzyl salicylate, benzyl alcohol, ethylhex… See more\nItem Form\tSpray\nProduct Dimensions\t15.01 x 6.2 x 5.59 cm; 0.1 Grams\nItem Volume\t100 Millilitres",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "start_time",
+									"value": "2021-07-30T00:00:00.000Z",
+									"type": "text"
+								},
+								{
+									"key": "end_time",
+									"value": "2021-08-31T00:00:00.000Z",
+									"type": "text"
+								},
+								{
+									"key": "sku",
+									"value": "R5-3450U",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/Health_files/parfum.jpg"
+								},
+								{
+									"key": "tags",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "depot",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "inventory",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "discount_percent",
+									"value": "42",
+									"type": "text"
+								},
+								{
+									"key": "colour",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "specification",
+									"value": "{\"Department\":\"‎Women's\",\"Manufacturer\":\"GIORGIO+ARMANI\",\"Country of Origin\":\"Italy\",\"Item model number\":\"‎3605521816658\",\"Product Dimensions\":\"‎15.01 x 6.2 x 5.59 cm; 0.1 Grams\"}",
+									"type": "text"
+								},
+								{
+									"key": "product_option",
+									"value": "Buy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/store/add_product/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"add_product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTI4MjQ0MywiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTEwOTY0M30.zYFJM5exAntS4tYUIDV7PL54ZYQJ53EGU1MJa8_23nI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Samsung UHD TV 24inch",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "50999",
+									"type": "text"
+								},
+								{
+									"key": "store",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "24\" FHD monitor with bezel-less design\nAMD Freesync\n75hz refresh rate\nIncredibly slim and sleek design\nSmooth game play with AMD Freesync and Game mode\nFluid pictures with 75hz refresh rate\nMade in Vietnam",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "start_time",
+									"value": "2021-07-01T11:00:00.000Z",
+									"type": "text"
+								},
+								{
+									"key": "end_time",
+									"value": "2021-07-23T11:00:00.000Z",
+									"type": "text"
+								},
+								{
+									"key": "sku",
+									"value": "SF1133569609-1",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/tv1.jpg"
+								},
+								{
+									"key": "tags",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "depot",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "inventory",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "discount_percent",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/store/update_product_details/8/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"update_product_details",
+								"8",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzg5MzI4OCwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzI4ODQ4OH0.tOh2JQuRN7fiBHraoXxdlUvvYFbhwI1BLic5uftiBUU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Casual shoes,Sneakers for men's,shoes for men's Sneakers For Men",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "999",
+									"type": "text"
+								},
+								{
+									"key": "store",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Sole: Rubber\nClosure: Lace-Up\nShoe Width: Medium\nBrand-Robbie Jones\nSole-Rubber\nUppar-PU\nCare Instructions :- Clean your shoes with Synthetic cleaner or shampoo, and use a Fine brush to remove loose surface dirt; if your shoes are wet after cleaning, let them air-dry before your proceed with the next step; dry shoes in room temperature only and never expose them to the sun, heat from the sun will cause the leather to shrink, wrinkle, harden, dry, and crack.",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "start_time",
+									"value": "2021-07-19T00:00:00.000Z",
+									"type": "text"
+								},
+								{
+									"key": "end_time",
+									"value": "2021-07-30T00:00:00.000Z",
+									"type": "text"
+								},
+								{
+									"key": "sku",
+									"value": "R5-3450U",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "depot",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "inventory",
+									"value": "90",
+									"type": "text"
+								},
+								{
+									"key": "discount_percent",
+									"value": "60",
+									"type": "text"
+								},
+								{
+									"key": "colour",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "specification",
+									"value": "{\" Brand\":\"‎Dell \",\"Manufacturer\":\"‎Dell India Pvt Ltd\",\"Series \":\"Dell Inspiron 3505\", \"Colour\":\"‎Soft Mint\",\"Item part number\":\"MIAMT0040Black_XS\"}",
+									"type": "text"
+								},
+								{
+									"key": "product_option",
+									"value": "Buy",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/Health_files/chimney.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/update_product_details/11/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"update_product_details",
+								"11",
+								""
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "Faber 60 cm 1500 m³/HR Auto-Clean Curved Glass Kitchen Chimney (HOOD PRIMUS PLUS ENERGY HC SC BK 60, 2 Baffle Filters, Touch Control, Black)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order view store owner",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNjU4MjM0MCwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNjQwOTU0MH0.cL2_mjTTrqiiLC-K5or8E40VzTW8LuZc5z6iR-4I8c4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/view_orders/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"view_orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add order item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyOTI2MjczMywiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyODY1NzkzM30.8aEKqGaA6tLj2M_Urwvtc96w08xu1bjkzHgbM9h9xJg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"products\":[3],\r\n    \"quantity\":[2],\r\n    \"booking\":\"True\",\r\n    \"buy\":\"False\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/add_orderitem/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"add_orderitem",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tag view",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyODE1ODU1NSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNzU1Mzc1NX0.vK8oHGgVNgxeKN2Bj1IIE36KzCrNCOeerrjXETGggJs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_tag/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_tag",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view brand ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNjg3OTk5MiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNjcwNzE5Mn0.jr4dh7YNEJXhRg4K2HOtLbsX7nOPvOghLDbh47rylNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_brand/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_brand",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view color",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOCwidXNlcm5hbWUiOiJkaXZ5YTE5OThraEBnbWFpbC5jb20iLCJleHAiOjE2MjY1MjEyMTIsImVtYWlsIjoiZGl2eWExOTk4a2hAZ21haWwuY29tIiwib3JpZ19pYXQiOjE2MjYzNDg0MTJ9.xu9V79nVegRFI_gIhuaIO6Cv1i0TbkoYufXyKUVQg-o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/deals/view_color/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_color",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view own product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNjgzODY0OCwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNjY2NTg0OH0.DVyUsAGeIezMHsNVsdGGGrZ_bcM8sjWWo_EDgnp-2LM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/deals/view_own_product/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_own_product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view size",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNjgzODY0OCwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNjY2NTg0OH0.DVyUsAGeIezMHsNVsdGGGrZ_bcM8sjWWo_EDgnp-2LM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/deals/view_size/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_size",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNjg3OTk5MiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNjcwNzE5Mn0.jr4dh7YNEJXhRg4K2HOtLbsX7nOPvOghLDbh47rylNU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/store/view_store/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"view_store",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product delete api",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNjk1MTc2NywiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNjc3ODk2N30.LpIumV6l41-PdN8Hk2Qxb53AXI8su3maq57oPDfT7N4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/update_product_details/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"update_product_details",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "specification of product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/store/get_spefications/4/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"get_spefications",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add product image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzA1MzYyNCwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNjg4MDgyNH0.lpJ5SlwNebZo8f0VV8qiMF-vJ4GBQj1Nwfuqw2Kwums",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "product_image1",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/Health_files/shoes_men2.jpeg"
+								},
+								{
+									"key": "product_image2",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/Health_files/shoes_men3.jpeg"
+								},
+								{
+									"key": "product_image3",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/Health_files/shoes_men4.jpeg"
+								},
+								{
+									"key": "product_image4",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/Health_files/shoes_men5.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/add_product_image/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"add_product_image",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product image",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzA1MzYyNCwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNjg4MDgyNH0.lpJ5SlwNebZo8f0VV8qiMF-vJ4GBQj1Nwfuqw2Kwums",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "product_image1",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/Health_files/shoes_men1.jpeg"
+								},
+								{
+									"key": "product_image2",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/Health_files/shoes_men3.jpeg"
+								},
+								{
+									"key": "product_image3",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/Health_files/shoes_men5.jpeg"
+								},
+								{
+									"key": "product_image4",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/Health_files/shoes_men2.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/update_product_image/11/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"update_product_image",
+								"11",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add brand",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTI4MjQ0MywiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTEwOTY0M30.zYFJM5exAntS4tYUIDV7PL54ZYQJ53EGU1MJa8_23nI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Samsung\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/store/add_product_brand/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"add_product_brand",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update brand",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTI4MjQ0MywiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTEwOTY0M30.zYFJM5exAntS4tYUIDV7PL54ZYQJ53EGU1MJa8_23nI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Boat\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/store/update_product_brand/2/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"update_product_brand",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzA1MzYyNCwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNjg4MDgyNH0.lpJ5SlwNebZo8f0VV8qiMF-vJ4GBQj1Nwfuqw2Kwums",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\":8,\r\n    \"product_category\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/add_category/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"add_category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTI4MjQ0MywiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTEwOTY0M30.zYFJM5exAntS4tYUIDV7PL54ZYQJ53EGU1MJa8_23nI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\":5,\r\n    \"product_category\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/update_category/9/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"update_category",
+								"9",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add description",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyODIyMjY2MiwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzYxNzg2Mn0.q2qeCA-hd9V26kF5AjMSd2rOD_9k4wsBZKyIKTwaALQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Complete Product details",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "24\" FHD monitor with bezel-less design, AMD Freesync and 75hz refresh rate (60.4 cm) Bezel Less Flat LED Monitor, Smooth game play with AMD Freesync and Game mode\nRelish your free time with this Samsung 43-inch Crystal 4K UHD smart TV. It is powered by Tizen OS and Crystal Processor 4K and is compatible with multiple voice assistants. The audio is enriched by 2CH speakers producing 20W output, Dolby Digital Plus, Q-Symphony. The HDR, Motion Xcelerator, PurColor assures detailed viewing. With PC Mode, you can perform all your PC or laptop works using the TV screen. You can free live stream Samsung TV Plus virtual channels. Moreover, the Content Guide and SmartThings app support make it a worth-having essential.\nResolution : 3840 x 2160 pixels | Refresh Rate : 60 Hz\nDisplay Feature: PurColor | Crystal Processor 4K | 4K UHD Resolution | HDR | Motion Xcelerator | HDR 10+ | HLG | One Billion Color\nSpeaker Output : 20W | Q-Symphony | Dolby Digital Plus | Sound Mirroring | Adaptive Sound\nOperating System : Tizen | Bixby | Google Assistant | Alexa | SmartThings App Support | Screen Mirroring | PC Mode | Tap View | Samsung TV Plus",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/tv3.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/store/add_description/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"add_description",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update describations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTI4MjQ0MywiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNTEwOTY0M30.zYFJM5exAntS4tYUIDV7PL54ZYQJ53EGU1MJa8_23nI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "How does it work ??",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "The SpO2 sensor comprises of a single LED and dual photobodies embedded on the back of the watch. The infrared LED penetrates your skin, shining light on your blood vessels when you have it strapped on. The two photobodies then measure the quantity of the reflected light and calculate the total amount of blood oxygen in your body.",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/Developer Extern/Downloads/product/61eoFn+lpDL._SL1500_.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/store/update_product_description/2/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"update_product_description",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subcategory wise deal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/sub_categories_wise_deal/3/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"sub_categories_wise_deal",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view_deal_of_the_month",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/view_deal_of_the_month/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_deal_of_the_month",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view own store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNzg3NDc2NiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNzI2OTk2Nn0.bTzEQ9f4e837s-aILjt6lraQ_eWqSukG_cztrRkcv88",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/store/view_store/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"view_store",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view buy item in cart ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzg3NTU4MSwiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzI3MDc4MX0.Agv3bHLuVZIp-jbgu3QlpUJCaVvLY472Gl1Ps4k_7tE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/deals/view_cart_buy_item/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_cart_buy_item",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view book item in cart view",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzg3NTU4MSwiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzI3MDc4MX0.Agv3bHLuVZIp-jbgu3QlpUJCaVvLY472Gl1Ps4k_7tE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/deals/view_cart_book_item/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"view_cart_book_item",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book product total amount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzg3NTU4MSwiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzI3MDc4MX0.Agv3bHLuVZIp-jbgu3QlpUJCaVvLY472Gl1Ps4k_7tE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/deals/cart_total_book_amount/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"cart_total_book_amount",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "total amount buy cart product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzg3NTU4MSwiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzI3MDc4MX0.Agv3bHLuVZIp-jbgu3QlpUJCaVvLY472Gl1Ps4k_7tE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/deals/cart_total_buy_amount/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"cart_total_buy_amount",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order declain and account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyODA1NjEwMywiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzQ1MTMwM30.kbFiF7NnG3QrsvRB1s75Khz57uyPbDxzWFvDzTeLn68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"Declain\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://54.70.54.216:8000/order/order_action/1/",
+							"protocol": "http",
+							"host": [
+								"54",
+								"70",
+								"54",
+								"216"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"order_action",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store wise product get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzkwNTY0NCwiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzMwMDg0NH0.FA6xTpdxNJSVk1RvCmQ9d8NoaiBEpzNY4yl8CBWjXsY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/store/store_wise_product/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"store_wise_product",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add booking form",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzk5MjY3MywiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzM4Nzg3M30.ZGaBnptpMNWRcRw78e83VINfqmbQX7rwOKnKgap2Ew8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order\":26,\r\n    \"email\":\"\",\r\n    \"mobile_number\":\"8503877128\",\r\n    \"first_name\":\"prakhar\",\r\n    \"last_name\":\"gupta\",\r\n    \"address\":\"23 anita colony\",\r\n    \"apartment\":\"sanganer\",\r\n    \"city\":\"jaipur\",\r\n    \"postal_code\":\"302015\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/add_bookinform/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"add_bookinform",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view booking form",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyOTc4MDE3OSwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyOTE3NTM3OX0.pyhptItDBphY0t389RUnu7v_O4VWCNqsczNrXxiOJ6E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/view_booking_form/26/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"view_booking_form",
+								"26",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update form",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyNzk5MjY3MywiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzM4Nzg3M30.ZGaBnptpMNWRcRw78e83VINfqmbQX7rwOKnKgap2Ew8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order\":3,\r\n    \"email\":\"prakhargupta@externlabs.com\",\r\n    \"mobile_number\":\"8503877128\",\r\n    \"first_name\":\"prakhar\",\r\n    \"last_name\":\"gupta\",\r\n    \"address\":\"23 anita colony\",\r\n    \"apartment\":\"sanganer\",\r\n    \"city\":\"jaipur\",\r\n    \"postal_code\":\"302015\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/update_booking_form/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"update_booking_form",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " get category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyODA1NjEwMywiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzQ1MTMwM30.kbFiF7NnG3QrsvRB1s75Khz57uyPbDxzWFvDzTeLn68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/store/get_category/3/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"get_category",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view product sab category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyODA1NjEwMywiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzQ1MTMwM30.kbFiF7NnG3QrsvRB1s75Khz57uyPbDxzWFvDzTeLn68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/store/view_product_category/8/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"view_product_category",
+								"8",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Product category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyODA1NjEwMywiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzQ1MTMwM30.kbFiF7NnG3QrsvRB1s75Khz57uyPbDxzWFvDzTeLn68",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\":3,\r\n    \"product_category\":8,\r\n    \"product_sub_category\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/store/add_category/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"add_category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyODA3MTc5NCwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNzQ2Njk5NH0.C9svEWgSJvUpGlL_BFhgWHMimINK3x_BIz_OZy314Ss",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": 3,\r\n    \"product_category\": 8,\r\n    \"product_sub_category\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/store/update_category/13/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"store",
+								"update_category",
+								"13",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyODE2MTQ4MiwiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzU1NjY4Mn0.sLtnFKhXIrHUe6Nf7sSwIu8lzQrfJQ3gtcYzACjvwpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://54.70.54.216:8000/order/order_detail/6/",
+							"protocol": "http",
+							"host": [
+								"54",
+								"70",
+								"54",
+								"216"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"order_detail",
+								"6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add color",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyODIyMjY2MiwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzYxNzg2Mn0.q2qeCA-hd9V26kF5AjMSd2rOD_9k4wsBZKyIKTwaALQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"pink\",\r\n    \"code\":\"#FFC0CB\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin_user/add_color/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"add_color",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add size",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNTAzMTc0NSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNDg1ODk0NX0.76cadoZRkApFbTXddfOtgmmuv09QSau7PZBn7ho1gCs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"size_or_weight\":\"24 in\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin_user/add_size/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"add_size",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add brand",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyODIyMjY2MiwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzYxNzg2Mn0.q2qeCA-hd9V26kF5AjMSd2rOD_9k4wsBZKyIKTwaALQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"sumsang\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/admin_user/add_brand/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"admin_user",
+								"add_brand",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyODU3NzAyOSwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzk3MjIyOX0.6ffFZGE8CtpyeaJw-4xUBqXmQYGUofc6o0FHqqMybNI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order\":1,\r\n    \"PartyA\":\"721827047\",\r\n    \"phone_number\":\"721827047\",\r\n    \"Amount\":1\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/payment/send_payment_request/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"payment",
+								"send_payment_request",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyODU3NzAyOSwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyNzk3MjIyOX0.6ffFZGE8CtpyeaJw-4xUBqXmQYGUofc6o0FHqqMybNI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"checkoutrequestid\":\"ws_CO_170820210909245419\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://54.218.20.155:8000/payment/check_payment/",
+							"protocol": "http",
+							"host": [
+								"54",
+								"218",
+								"20",
+								"155"
+							],
+							"port": "8000",
+							"path": [
+								"payment",
+								"check_payment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyOTA5MDYyNywiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyODQ4NTgyN30.u3Kymbo_JJ6N7j3bPZxVQxQAJ7rtMFcu8tsCaZ8_ysk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/notification/view_notification/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"notification",
+								"view_notification",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6InByYWtoYXJndXB0YUBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyOTA5MDYyNywiZW1haWwiOiJwcmFraGFyZ3VwdGFAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyODQ4NTgyN30.u3Kymbo_JJ6N7j3bPZxVQxQAJ7rtMFcu8tsCaZ8_ysk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/notification/delete_notification/6/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"notification",
+								"delete_notification",
+								"6",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check sale",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/deals/check_sale/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"deals",
+								"check_sale",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sub_bill",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyOTc4MDE3OSwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyOTE3NTM3OX0.pyhptItDBphY0t389RUnu7v_O4VWCNqsczNrXxiOJ6E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/view_subbill/32/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"view_subbill",
+								"32",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view bill order wise ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTYyNjU4NDQxNCwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTYyNjQxMTYxNH0.PvPFhynbNUCoA9wa0Q12xH8cG4PGnRoPoGdOQTFS3MY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/view_bill/26/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"view_bill",
+								"26",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer order view",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6ImRpdnlha2hhbmRlbHdhbEBleHRlcm5sYWJzLmNvbSIsImV4cCI6MTYyOTc4MDE3OSwiZW1haWwiOiJkaXZ5YWtoYW5kZWx3YWxAZXh0ZXJubGFicy5jb20iLCJvcmlnX2lhdCI6MTYyOTE3NTM3OX0.pyhptItDBphY0t389RUnu7v_O4VWCNqsczNrXxiOJ6E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/view_own_order/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"view_own_order",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "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",
+							"host": [
+								"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"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8000/user/contact/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"divya khandelwal\",\r\n    \"email\":\"divyakhandelwal@externlabs.com\",\r\n    \"subject\":\"refund\",\r\n    \"message\":\"refund money not recive\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/user/contact/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"user",
+								"contact",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,8 @@
+release: python manage.py makemigrations --no-input
+release: python manage.py migrate --no-input
+
+web: gunicorn Plant_Listing.wsgi 
+
+
+web: daphne Plant_Listing.asgi:application --port $PORT --bind 0.0.0.0
+worker: python manage.py runworker channel_layer -v2
